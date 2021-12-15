@@ -1,5 +1,5 @@
 import Header from './components/Header'
-import Task from './components/Task'
+import Tasks from './components/Tasks'
 import { useState } from 'react';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Task tasks={tasks}/>
+      <Tasks tasks={tasks}/>
     </div>
   );
 }
