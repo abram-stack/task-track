@@ -11,6 +11,12 @@
       "text": "Working at Cafe",
       "day": "Feb 6th at 2:00pm",
       "reminder": true
+    },
+    {
+      "text": "Task one",
+      "day": "friday",
+      "reminder": true,
+      "id": 3
     }
   ]
 }
