@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 function App() {
   // we want to have the state in top level component 
+  const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([{
     id: 1,
     text: 'Appointment with doctor',
@@ -33,6 +34,7 @@ function App() {
     setTasks([...tasks, newTask]);
   }
 
+
   // Delete task 
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
@@ -47,8 +49,8 @@ function App() {
   }
   return (
     <div className="container">
-      <Header />
-      <AddTask onAdd={addTask}/>
+      <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
+      { showAddTask && <AddTask onAdd={addTask}/>}
       {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/>) :
         ('No to show')
       }
