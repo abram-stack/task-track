@@ -1,12 +1,28 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   // we want to have the state in top level component 
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([])
+  
+  // useEffect is async function
+  useEffect(() => {
+    const getTasks = async () => {
+      const fetchFromDB = await fetchTasks();
+      setTasks(fetchFromDB);
+    }
+    getTasks();
+  }, [])
+
+  // fetch data 
+  const fetchTasks = async() => {
+      const result = await fetch('http://localhost:5000/tasks');
+      const data = await result.json();
+      return data;
+  }
   
   // Add Task
   const addTask = (task) => {
