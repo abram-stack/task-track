@@ -26,9 +26,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 To run the app you have to run the server first,
 ### Run local server and local Database that runs on PORT 5000
-`npm run server`
+### `npm run server`
 
 ### Run the app locally and use the web browser, on localhost:8000
- `serve -s build -p 8000
+### `serve -s build -p 8000`
 
 To learn React, check out the [React documentation](https://reactjs.org/).
